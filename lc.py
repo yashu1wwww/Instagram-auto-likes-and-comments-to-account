@@ -18,7 +18,7 @@ driver.find_element_by_name('password').send_keys('insta232') #replace with your
 sleep(1)
 driver.find_element_by_xpath("//button[@type='submit']").click()
 sleep(9)
-driver.get('https://www.instagram.com/kichchasudeepa/') #replace with your url which you want do make auto like cmt
+driver.get('https://www.instagram.com/instagram/') #replace with your url which you want do make auto like cmt
 sleep(11)
 driver.find_element_by_class_name('_aagw').click()
 sleep(3)
