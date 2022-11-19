@@ -5,7 +5,7 @@ change 16 line & 17 with username & password and 21 line with your targeted inst
 
 #here i added upto 25 posts auto likes if you want another 25 posts auto like means then copy line from 25 to 121 and paste in 122th line(open notepad ++ for no line)
 
-Download The Latest Version Of Chrome Driver https://chromedriver.chromium.org/ & Extract The File And Place To These Folder open cmd on that particular folder and enter ll.py or double click on ll.py or you can rename the file and run
+Download The Latest Version Of Chrome Driver https://chromedriver.chromium.org/ & Extract The File And Place To These Folder open cmd on that particular folder and enter lc.py or double click on lc.py or you can rename the file and run
 
 👉Note:-
 
