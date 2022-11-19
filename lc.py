@@ -8,7 +8,7 @@ from time import sleep
 import random
 
 commentsDict = ['good','amazing one','keep going','excellent','next video please','follow your page','shared to others','made my day','keep it up','sensational','rock it','challenge it','post video daily','work was amazing','needed more edit','edit was awesome',
-'what a video man','watched yesterday','your are genious','faster than light','your work needed success','new fan of you','keep rock dude','copy cat','link the video','listening','writing','reading','playing',] 
+'what a video man','watched yesterday','your are genious','faster than light','your work needed success','new fan of you','keep rock dude','copy cat','link the video','listening','writing','reading','playing',] #replace with your words
 
 driver = webdriver.Chrome()
 driver.get("https://www.instagram.com")
@@ -18,7 +18,7 @@ driver.find_element_by_name('password').send_keys('insta232') #replace with your
 sleep(1)
 driver.find_element_by_xpath("//button[@type='submit']").click()
 sleep(9)
-driver.get('https://www.instagram.com/kichchasudeepa/') #replace with your targeted account url where you want to put auto like & cmt
+driver.get('https://www.instagram.com/kichchasudeepa/') #replace with your url which you want do make auto like cmt
 sleep(11)
 driver.find_element_by_class_name('_aagw').click()
 sleep(3)
