@@ -5,9 +5,11 @@ insta auto post &amp; comment to the posts using selenium with python
 
 https://youtu.be/zcKYOYPSJY8
 
-change 16 line & 17 with username & password and 21 line with your targeted instagram url....
+Download the latest version of Chrome Driver from https://chromedriver.chromium.org/ and extract the file. 
 
-Download The Latest Version Of Chrome Driver https://chromedriver.chromium.org/ & Extract The File And Place To These Folder open cmd on that particular folder and enter lc.py or double click on lc.py or you can rename the file and run
+Then, place it in a particular folder of your choice. Open cmd on that folder and enter your username and password by replacing line 16 and 17 respectively. Finally, 
+
+replace line 21 with the targeted Instagram URL that you want to automate. Once done, run the renamed file or enter lc.py in cmd to execute the program
 
 👉Note:-
 
