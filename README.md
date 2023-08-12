@@ -1,9 +1,9 @@
 # insta-auto-post-comment
 insta auto post &amp; comment to the posts using selenium with python
 
-👉Instagram Auto Like & Comments For A Particular id
+👉Instagram Auto Like & Comments For A Particular account
 
-https://youtu.be/zcKYOYPSJY8
+
 
 Download the latest version of Chrome Driver from https://chromedriver.chromium.org/ and extract the file. 
 
