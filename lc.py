@@ -5,327 +5,64 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
+from selenium.webdriver import ActionChains
 import random
 
 commentsDict = ['good','amazing one','keep going','excellent','next video please','follow your page','shared to others','made my day','keep it up','sensational','rock it','challenge it','post video daily','work was amazing','needed more edit','edit was awesome',
-'what a video man','watched yesterday','your are genious','faster than light','your work needed success','new fan of you','keep rock dude','copy cat','link the video','listening','writing','reading','playing',] #replace with your words
+'what a video man','watched yesterday','your are genious','faster than light','your work needed success','new fan of you','keep rock dude','copy cat','link the video','listening','writing','reading','playing',] 
 
 driver = webdriver.Chrome()
 driver.get("https://www.instagram.com")
 sleep(3)
-driver.find_element_by_name('username').send_keys('dlopoelegssgvs') #replace with your insta username
-driver.find_element_by_name('password').send_keys('insta232') #replace with your password
+driver.find_element_by_name('username').send_keys('yashu_infi') #replace with your insta username
+driver.find_element_by_name('password').send_keys('Name11@#$%') #replace with your insta password
 sleep(1)
 driver.find_element_by_xpath("//button[@type='submit']").click()
-sleep(9)
-driver.get('https://www.instagram.com/instagram/') #replace with your url which you want do make auto like cmt
-sleep(11)
-driver.find_element_by_class_name('_aagw').click()
+sleep(6)
+driver.get('https://www.instagram.com/virat.kohli/?hl=en') #chanhe the url 
+sleep(8)
+post_click=driver.find_element_by_class_name("_aagw").click() #click on first post 
 sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
+like=driver.find_element_by_class_name("_aamw").click() #click on like button
 sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
+driver.find_element(By.XPATH,'//*[@class ="_akhn"]//textarea').click() #click on comment section area
 sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
+driver.find_element(By.XPATH,'//*[@class ="_akhn"]//textarea').send_keys(random.choice(commentsDict)) #send the text in comment section
 sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
+driver.find_element_by_xpath('/html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[3]/div/form/div/div[2]/div').click() #click on post button of comment
 sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
+next_button=driver.find_element_by_xpath('/html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div/button').click()
+sleep(4)
 
+while True:
+    try:
+        # Find and click the like button
+        driver.find_element_by_class_name("_aamw").click()
+        
+        sleep(1)
 
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
+        # Find and click the comment text area
+        comment_textarea = driver.find_element(By.XPATH, '//*[@class ="_akhn"]//textarea')
+        comment_textarea.click()
+        
+        sleep(1)
+        
+        # Type a comment
+        comment_text = driver.find_element(By.XPATH, '//*[@class ="_akhn"]//textarea')
+        comment_text.send_keys(random.choice(commentsDict))
 
+        sleep(1)
+        
+        # Post the comment
+        post_button = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[3]/div/div/div/div/div[2]/div/article/div/div[2]/div/div/div[2]/section[3]/div/form/div/div[2]/div')
+        post_button.click()
 
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
+        # Click the next post button
+        next_button = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[3]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button')
+        next_button.click()
 
+        sleep(3)  
 
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-
-
-sleep(3)
-next_button=driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[2]/div/div/div[1]/div/div[3]/div/div/div/div/div[1]/div/div/div[2]/button').click()
-sleep(3)
-like=driver.find_element_by_xpath('//span[@class="_aamw"]/button/div[2]/span').click()
-time.sleep(3)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').click()
-sleep(1)
-driver.find_element(By.XPATH,'//*[@class ="_aidk"]//textarea').send_keys(random.choice(commentsDict))
-sleep(1)
-driver.find_element_by_xpath('/html/body/div[1]/div/div/div/div[1]/div/div/div/div[1]/div[1]/div[2]/section/main/div[1]/div[1]/article/div/div[2]/div/div[2]/section[3]/div/form/div[2]/div').click()
-sleep(3)
-driver.close()
+    except Exception as e:
+        print("An error occurred:", e)
+        break  
