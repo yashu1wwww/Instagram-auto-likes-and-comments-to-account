@@ -20,7 +20,7 @@ driver.find_element_by_name('password').send_keys('insta_123@#$%') #replace with
 sleep(2)
 driver.find_element_by_xpath("//button[@type='submit']").click()
 sleep(6)
-driver.get('https://www.instagram.com/virat.kohli/?hl=en') #chanhe the url 
+driver.get('https://www.instagram.com/virat.kohli/?hl=en') #change the url 
 sleep(8)
 post_click=driver.find_element_by_class_name("_aagw").click() #click on first post 
 sleep(3)
