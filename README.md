@@ -1,7 +1,7 @@
 # insta-auto-post-comment
 insta auto post &amp; comment to the account(id) using selenium with python
 
-## replace 17th and 19th line with username & password of instagram acc & 23rd line with acc url
+## Replace 17th and 19th line with username & password of instagram acc & 23rd line with acc url
 
 Download the latest version of Chrome Driver from https://chromedriver.chromium.org/ and extract the file. Place it in the designated folder. Open the command prompt in that particular folder and enter lc.py or double-click on the rl.py file.
 
