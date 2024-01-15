@@ -20,7 +20,7 @@ driver.find_element_by_name('password').send_keys('Insta@123') #replace with you
 sleep(2)
 driver.find_element_by_xpath("//button[@type='submit']").click()
 sleep(7)
-driver.get('https://www.instagram.com/') #change the url 
+driver.get('https://www.instagram.com/youtubeindia/?hl=en') #change the url 
 sleep(8)
 post_click=driver.find_element_by_class_name("_aagw").click() #click on first post 
 sleep(3)
