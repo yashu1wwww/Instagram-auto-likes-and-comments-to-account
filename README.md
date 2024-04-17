@@ -8,6 +8,8 @@ insta auto post &amp; comment to the account(id) using selenium with python
 
 Download the latest version of Chrome Driver from https://chromedriver.chromium.org/ and extract the file. Place it in the designated folder. Open the command prompt in that particular folder and enter lc.py or double-click on the rl.py file.
 
+# 👉 Note: Every time Instagram updates the code, it varies. So, open the YouTube video, press 'Ctrl+Shift+C' to open the developer tools, and inspect the like button & comments.
+
 👉Note:-
 
 👉if your selenium version is in latest version then the code never run
